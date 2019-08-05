@@ -16,7 +16,7 @@ if (typeof redactor_custom_options === 'undefined') {
                     alert(json.error);
                 }
             }
-            $(this).redactor(redactor_options);
+            // $(this).redactor(redactor_options);
         });
         $(document).trigger('redactorWidgetReady');
 

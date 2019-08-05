@@ -34,7 +34,7 @@ class RedactorEditor(widgets.Textarea):
             )
         return options
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         if 'class' not in attrs.keys():
             attrs['class'] = ''
 
@@ -42,7 +42,7 @@ class RedactorEditor(widgets.Textarea):
 
         attrs['data-redactor-options'] = json_dumps(self.options)
 
-        html = super(RedactorEditor, self).render(name, value, attrs)
+        html = super(RedactorEditor, self).render(name, value, attrs, renderer)
 
         return mark_safe(html)
 

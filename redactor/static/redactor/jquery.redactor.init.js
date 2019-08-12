@@ -6,7 +6,8 @@ if (typeof redactor_custom_options === 'undefined') {
     redactor_custom_options = {}
 }
 
-(function($) {
+(function(_$) {
+    $ = jQuery  // Fixes a weird scope issue with $ being passed
     $(document).ready(function() {
         $(document).on('redactor:init', 'textarea.redactor-box', function() {
             var redactor_options = $.extend({}, $(this).data('redactor-options'),
@@ -16,7 +17,7 @@ if (typeof redactor_custom_options === 'undefined') {
                     alert(json.error);
                 }
             }
-            // $(this).redactor(redactor_options);
+            $(this).redactor(redactor_options);
         });
         $(document).trigger('redactorWidgetReady');
 
